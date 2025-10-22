@@ -16,7 +16,7 @@ HTML | CSS | JavaScript
 
 How to Use
 1. Clone the repository:  
-   `git clone <your-repo-link>`  
+   `git clone https://github.com/gautamsonpitale17/BuildIn30Days`  
 2. Open `index.html` in your browser  
 3. Start calculating! 🧮
 
