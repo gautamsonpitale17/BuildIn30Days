@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* Global Styles */
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+/* Container  */
+
+.container{
+    width: 100%;
+    height: 100vh;
+    background: #262b2a; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Calculator Box */
+
+.calculator{
+    background: #0e161b;
+    border-radius: 20px;
+    padding:10px;
+}
+
+/* Buttons  */
+
+.calculator form input{
+    margin: 12px;
+    width: 65px;
+    height: 65px;
+    border: 0;
+    outline: 0;
+    border-radius: 14px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Display Container */
+
+form .display{
+    display: flex;
+    justify-content: flex-end;
+    margin: 30px 10px;
+}
+
+/* Display Input */
+
+form .display input{
+    text-align: right;
+    flex: 1;
+    font-size: 50px;
+    padding: 10px;
+}
+
+/* Equal Button */
+
+form input.equal{
+    width: 155px;
+}
+
+/* Operator Buttons */
+
+form input.operator{
+    color: #0a9f57; 
+}
+
+/* Active Button Effect for keyboard support */
+
+input.active {
+  background: rgba(255,255,255,0.2);
+}
