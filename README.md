@@ -1,6 +1,6 @@
 # QuickCalc (Project 1/30)
 
-This is my first project in my 30-day coding challenge — building one small project per day to improve my web development skills.
+This is my first project in my 30-day coding, building one small project per day to improve my web development skills.
 
 QuickCalc is a simple calculator built with HTML, CSS, and JavaScript. It performs basic arithmetic operations with a clean and responsive UI.
 
