@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuickTodo (Project 2/30)</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="images/iconNotes.png" type="image/png" />
+</head>
+<body>
+  <main class="container">
+    <section class="todo" aria-label="To-Do List Application">
+      <header>
+        <h2>
+          To-Do List
+          <img src="images/iconNotes.png" alt="Notes Icon" />
+        </h2>
+      </header>
+
+      <div class="row">
+        <input
+          type="text"
+          id="input-box"
+          placeholder="Enter your task..."
+          aria-label="Task input"
+          autofocus
+        />
+        <button id="add-btn" onclick="addTask()" aria-label="Add task">
+          Add
+        </button>
+      </div>
+
+      <ul id="list-container" aria-label="List of tasks"></ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
