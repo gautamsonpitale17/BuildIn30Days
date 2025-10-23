@@ -15,12 +15,7 @@ Tech Stack:
 HTML | CSS | JavaScript
 
 How to Use:
-1. Clone the repository:  
-<<<<<<< HEAD:README.md
-   `git clone https://github.com/gautamsonpitale17/BuildIn30Days`  
-=======
-   `git clone : https://github.com/gautamsonpitale17/BuildIn30Days/tree/main/QuickCalc`  
->>>>>>> b805604 (Fix untracked files and deletions):QuickCalc/README.md
+1. Clone the repository: `git clone https://github.com/gautamsonpitale17/BuildIn30Days`  
 2. Open `index.html` in your browser  
 3. Start calculating! 🧮
 
