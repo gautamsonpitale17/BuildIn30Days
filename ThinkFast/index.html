@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThinkFast Quiz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <h1>ThinkFast</h1>
+        <div id="timer-container" style="display:none;"> 
+            Time Left: <span id="timer-display">15</span>s
+        </div>
+        <div class="quiz">
+            <h2 id="question">Click Start to begin the quiz!</h2>
+            <div id="answer-buttons"></div>
+            <div class="control-buttons">
+                <button id="start-btn">Start Quiz</button>
+                <button id="next-btn" style="display:none;">Next</button>
+                <button id="quit-btn" style="display:none;">Quit</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
