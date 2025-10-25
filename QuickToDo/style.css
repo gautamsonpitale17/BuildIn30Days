@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -6,63 +8,103 @@
 }
 
 body {
-  background: #121212;
+  background-color: #121212;
+  color: #e0e0e0;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  color: #e0e0e0;
   padding: 10px;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.light {
+  background-color: #f8f8f8;
+  color: #121212;
 }
 
 .container {
   width: 100%;
-  max-width: 600px; /* Slightly bigger for large screens */
+  max-width: 600px;
 }
 
 .todo {
-  background: #1e1e1e;
+  background-color: #1e1e1e;
   border-radius: 20px;
   padding: 30px 25px 50px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
   border: 1px solid #2c2c2c;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.7);
   transition: all 0.3s ease;
+}
+
+body.light .todo {
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
 }
 
 .todo:hover {
   transform: translateY(-3px);
 }
 
-.todo h2 {
-  color: #f0f0f0;
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 25px;
+}
+
+.todo h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
   display: flex;
   align-items: center;
-  font-weight: 600;
-  font-size: 1.8rem;
+  gap: 10px;
 }
 
 .todo h2 img {
   width: 28px;
-  margin-left: 10px;
-  filter: brightness(0) saturate(100%) invert(95%) sepia(15%) saturate(200%) hue-rotate(170deg);
+}
+
+#theme-toggle {
+  font-size: 1.3rem;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 8px;
+  border: none;
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+  margin-left: 15px;
+  transition: all 0.3s ease;
+}
+
+body.light #theme-toggle {
+  background-color: #e0e0e0;
+  color: #121212;
+}
+
+#theme-toggle:hover {
+  opacity: 0.8;
 }
 
 .row {
   display: flex;
-  align-items: center;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: space-between;
   background-color: #2a2a2a;
   border-radius: 10px;
-  padding-left: 20px;
+  padding: 12px 15px;
   margin-bottom: 25px;
   border: 1px solid #333;
-  transition: all 0.3s ease;
+  gap: 10px;
+}
+
+body.light .row {
+  background-color: #e0e0e0;
+  border: 1px solid #ccc;
 }
 
 .row:focus-within {
-  background-color: #272727;
   border: 1px solid #00c9c9;
 }
 
@@ -73,8 +115,9 @@ input {
   background: transparent;
   padding: 12px;
   font-size: 16px;
-  color: #e0e0e0;
+  color: inherit;
   min-width: 120px;
+  margin-right: 10px;
 }
 
 button {
@@ -86,9 +129,16 @@ button {
   font-size: 16px;
   border-radius: 10px;
   cursor: pointer;
-  box-shadow: 0 0 15px rgba(0, 201, 201, 0.4);
-  transition: all 0.3s ease;
   flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+body.light button {
+  background: linear-gradient(135deg, #0077ff, #00aaff);
+}
+
+button:hover {
+  transform: scale(1.05);
 }
 
 ul {
@@ -96,13 +146,12 @@ ul {
 }
 
 ul li {
-  font-size: 17px;
-  padding: 14px 8px 14px 50px;
   position: relative;
+  padding: 14px 8px 14px 50px;
+  font-size: 17px;
   cursor: pointer;
   user-select: none;
   border-radius: 10px;
-  color: #e0e0e0;
   transition: background 0.25s, color 0.25s;
 }
 
@@ -111,31 +160,25 @@ ul li::before {
   position: absolute;
   height: 24px;
   width: 24px;
-  background-image: url(./images/unchecked.png);
-  background-size: cover;
-  background-position: center;
   top: 12px;
   left: 8px;
-  opacity: 0.9;
+  background-image: url('./images/unchecked.png');
+  background-size: cover;
+  background-position: center;
 }
 
 ul li.checked {
-  color: #00c9c9;
   text-decoration: line-through;
+  color: #00c9c9;
 }
 
 ul li.checked::before {
-  background-image: url(./images/checked.png);
-}
-
-ul li:hover {
-  background: #2f2f2f;
+  background-image: url('./images/checked.png');
 }
 
 ul li.selected {
   background: #202c2c;
   border-left: 4px solid #00c9c9;
-  font-weight: 500;
 }
 
 ul li span {
@@ -144,12 +187,10 @@ ul li span {
   top: 5px;
   width: 40px;
   height: 40px;
-  font-size: 22px;
-  color: #aaa;
   line-height: 40px;
   text-align: center;
   border-radius: 50%;
-  transition: all 0.25s;
+  color: #aaa;
 }
 
 ul li span:hover {
@@ -157,40 +198,11 @@ ul li span:hover {
   color: #fff;
 }
 
-/* SMALL PHONES */
 @media (max-width: 480px) {
   .todo { padding: 20px 15px 40px; }
   .todo h2 { font-size: 1.5rem; }
-  .row { flex-direction: column; padding: 10px; border-radius: 15px; }
-  input { width: 100%; margin-bottom: 10px; padding: 15px; border-radius: 10px; background-color: #333; }
-  button { width: 100%; padding: 12px 0; font-size: 18px; }
-  ul li { font-size: 16px; padding: 12px 8px 12px 45px; }
-  ul li::before { height: 22px; width: 22px; top: 10px; }
-  ul li span { width: 35px; height: 35px; font-size: 20px; line-height: 35px; top: 8px; }
-}
-
-/* TABLETS */
-@media (min-width: 481px) and (max-width: 768px) {
-  .todo { padding: 25px 20px 45px; }
-  .todo h2 { font-size: 1.6rem; }
-  input { font-size: 16px; }
-  button { font-size: 16px; padding: 14px 30px; }
-  ul li { font-size: 16px; padding: 12px 8px 12px 48px; }
-}
-
-/* LAPTOPS / SMALL DESKTOPS */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .todo { padding: 28px 22px 50px; }
-  .todo h2 { font-size: 1.7rem; }
-  button { padding: 14px 40px; font-size: 16px; }
-  ul li { font-size: 17px; padding: 14px 8px 14px 50px; }
-}
-
-/* LARGE SCREENS */
-@media (min-width: 1025px) {
-  .container { max-width: 700px; }
-  .todo { padding: 35px 30px 60px; }
-  .todo h2 { font-size: 2rem; }
-  button { padding: 14px 50px; font-size: 18px; }
-  ul li { font-size: 18px; padding: 16px 8px 16px 55px; }
+  .row { flex-direction: column; padding: 10px; }
+  input, button { width: 100%; margin-bottom: 10px; }
+  button { padding: 12px 0; font-size: 18px; }
+  ul li { padding: 12px 8px 12px 45px; font-size: 16px; }
 }
