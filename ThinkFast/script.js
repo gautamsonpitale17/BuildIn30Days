@@ -1,3 +1,35 @@
+const body = document.body;
+const themeToggle = document.getElementById('theme-toggle');
+
+function updateThemeIcon(theme) {
+    if (theme === 'dark') {
+        themeToggle.textContent = '☀️'; 
+    } else {
+        themeToggle.textContent = '🌙'; 
+    }
+}
+
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+    body.setAttribute('data-theme', savedTheme);
+    updateThemeIcon(savedTheme);
+} else {
+    updateThemeIcon(body.getAttribute('data-theme') || 'dark');
+}
+
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = body.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+        body.setAttribute('data-theme', newTheme);
+        
+        localStorage.setItem('theme', newTheme);
+        
+        updateThemeIcon(newTheme);
+    });
+}
+
 let questions = [
     {
         question: "In Game of Thrones, what is the name of the heavily armored military group that Daenerys acquires in Essos?",
@@ -293,6 +325,11 @@ function toggleTimerVisibility(show) {
     timerContainer.style.display = show ? 'block' : 'none';
 }
 
+function toggleAnswerButtonsVisibility(show) {
+    answerButtons.style.display = show ? 'grid' : 'none';
+}
+
+
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -309,6 +346,7 @@ function resetState() {
         answerButtons.removeChild(answerButtons.firstChild);
     }
     toggleTimerVisibility(false);
+    toggleAnswerButtonsVisibility(false); 
 }
 
 function startQuiz() {
@@ -327,6 +365,8 @@ function startQuiz() {
     score = 0;
     unusedQuestions = [...questions];
     startButton.innerText = "Start Quiz";
+    
+    questionElement.innerText = "";
     
     startRound();
 }
@@ -350,6 +390,7 @@ function startRound() {
 function showQuestion() {
     resetState();
     toggleTimerVisibility(true);
+    toggleAnswerButtonsVisibility(true); 
     
     const currentQuestion = quizQuestions[currentQuestionIndex];
     
@@ -419,6 +460,8 @@ function handleNextButton() {
             questionElement.innerText = `Round ${currentRound - 1} completed!\nScore so far: ${score}.`;
             nextButton.innerText = "Start Next Round";
             nextButton.style.display = "block";
+            toggleAnswerButtonsVisibility(false);
+            toggleTimerVisibility(false);
         }
     }
 }
@@ -431,7 +474,7 @@ function showFinalResult() {
     resetState();
     
     const roundFinished = currentQuestionIndex >= quizQuestions.length ? currentRound - 1 : currentRound;
-    const answeredInPreviousRounds = (roundFinished - 1) * QUESTIONS_PER_ROUND;
+    const answeredInPreviousRounds = Math.max(0, roundFinished - 1) * QUESTIONS_PER_ROUND;
     const answeredInCurrentRound = currentQuestionIndex; 
     const totalAnswered = answeredInPreviousRounds + answeredInCurrentRound;
     
@@ -445,10 +488,15 @@ function showFinalResult() {
     nextButton.style.display = "none";
     quitButton.style.display = "none";
     toggleTimerVisibility(false);
+    toggleAnswerButtonsVisibility(false); 
     
     unusedQuestions = [...questions];
     score = 0;
     currentRound = 1;
+    
+    if (startButton.innerText === "Play Again") {
+        questionElement.innerText += "\nClick 'Play Again' to start a new quiz!";
+    }
 }
 
 startButton.addEventListener("click", startQuiz);

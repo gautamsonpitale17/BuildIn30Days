@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -9,10 +11,17 @@ body {
     background-color: #121212;
     color: #e0e0e0;
     min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+[data-theme="light"] {
+    background-color: #f4f4f4;
+    color: #333333;
 }
 
 .app {
@@ -22,19 +31,66 @@ body {
     margin: auto;
     border-radius: 10px;
     padding: 35px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05), 0 10px 30px rgba(0, 0, 0, 0.8);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    position: relative; 
+    transition: background-color 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+[data-theme="light"] .app {
+    background-color: #ffffff;
+    border-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .app h1 {
-    font-size: 28px;
     color: #ffffff;
+    font-size: 28px;
     font-weight: 700;
     text-align: left;
-    border-bottom: 2px solid #ffffff;
+    border-bottom: 2px solid #00bcd4;
     padding-bottom: 20px;
     margin-bottom: 25px;
     letter-spacing: 1.5px;
+    transition: color 0.3s;
+}
+
+[data-theme="light"] .app h1 { 
+    color: #121212;
+}
+
+#theme-toggle {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    width: 40px;
+    height: 40px;
+    background-color: #333333;
+    color: #00bcd4;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5em;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+}
+
+#theme-toggle:hover {
+    background-color: #444444;
+    transform: scale(1.05);
+}
+
+[data-theme="light"] #theme-toggle {
+    background-color: #e0e0e0;
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] #theme-toggle:hover {
+    background-color: #d0d0d0;
 }
 
 #timer-container {
@@ -43,29 +99,35 @@ body {
     margin-bottom: 20px;
     padding: 12px;
     background-color: #333333;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 6px;
     text-align: center;
     color: #ffffff;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s, color 0.3s;
+    display: none; 
+}
+
+[data-theme="light"] #timer-container {
+    background-color: #f0f0f0;
 }
 
 #timer-display {
-    color: #ff5722;
+    color: #00bcd4;
     font-size: 1.2em;
     margin-left: 5px;
 }
 
 .quiz h2 {
     font-size: 20px;
-    color: #e0e0e0;
     font-weight: 600;
     margin-bottom: 30px;
     min-height: 50px;
+    transition: color 0.3s;
 }
 
 #answer-buttons {
-    display: grid;
+    display: none; 
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
 }
@@ -75,13 +137,19 @@ body {
     color: #e0e0e0;
     font-weight: 500;
     width: 100%;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 15px;
     text-align: left;
     border-radius: 6px;
     cursor: pointer;
     transition: all 0.25s;
     box-shadow: 0 0 4px rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="light"] .btn {
+    background-color: #e0e0e0;
+    color: #333333;
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .btn:hover:not([disabled]) {
@@ -92,23 +160,32 @@ body {
     transform: translateY(-1px);
 }
 
+[data-theme="light"] .btn:hover:not([disabled]) {
+    background-color: #d0d0d0; 
+    color: #121212;
+    border-color: #121212;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
 .btn:disabled {
     cursor: not-allowed;
     opacity: 0.4;
 }
 
+.correct, .incorrect {
+    color: #ffffff !important;
+    border-color: transparent !important;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+}
+
 .correct {
-    background-color: #388e3c !important;
-    color: #e0e0e0 !important;
-    border-color: #388e3c !important;
-    box-shadow: 0 0 5px #388e3c;
+    background-color: #66bb6a !important;
+    box-shadow: 0 0 8px #66bb6a;
 }
 
 .incorrect {
-    background-color: #c62828 !important;
-    color: #e0e0e0 !important;
-    border-color: #c62828 !important;
-    box-shadow: 0 0 5px #c62828;
+    background-color: #ef5350 !important;
+    box-shadow: 0 0 8px #ef5350;
 }
 
 .control-buttons {
@@ -119,8 +196,8 @@ body {
     flex-wrap: wrap;
 }
 
-#start-btn {
-    background-color: #4caf50;
+#start-btn, #next-btn {
+    background-color: #00bcd4;
     color: #ffffff;
     font-weight: 700;
     padding: 12px 25px;
@@ -130,31 +207,12 @@ body {
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: all 0.25s;
-    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+    box-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
 }
 
-#start-btn:hover {
-    background-color: #388e3c;
-    box-shadow: 0 0 12px rgba(56, 142, 60, 0.7);
-}
-
-#next-btn {
-    background-color: #ff5722;
-    color: #ffffff;
-    font-weight: 700;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.25s;
-    box-shadow: 0 0 5px rgba(255, 87, 34, 0.5);
-}
-
-#next-btn:hover {
-    background-color: #e64a19;
-    box-shadow: 0 0 12px rgba(230, 74, 25, 0.7);
+#start-btn:hover, #next-btn:hover {
+    background-color: #00838f;
+    box-shadow: 0 0 12px rgba(0, 131, 143, 0.7);
 }
 
 #quit-btn {
@@ -177,8 +235,23 @@ body {
 }
 
 @media (max-width: 600px) {
+    .app {
+        padding: 25px;
+    }
+    
+    #theme-toggle {
+        top: 15px;
+        right: 15px;
+    }
+    
     #answer-buttons {
         grid-template-columns: 1fr;
+    }
+    
+    .btn {
+        padding: 12px; 
+        font-size: 0.9em; 
+        text-align: center;
     }
 
     .control-buttons {
