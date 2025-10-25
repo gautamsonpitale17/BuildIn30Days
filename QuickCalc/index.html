@@ -3,48 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QuickCalc (Project 1/30)</title>
-    <link rel="stylesheet" href="style.css">
+    <title>QuickCalc</title>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css"> 
 </head>
-<body>
+<body class="dark-theme"> 
+    
     <div class="container">
+        
+        <div id="status-bar">
+            <h1 id="project-name">QUICKCALC</h1>
+            
+            <button id="theme-toggle">
+                <i class="fas fa-sun"></i> 
+            </button>
+        </div>
+
         <div class="calculator">
             <form class="buttons">
                 <div class="display">
-                    <input type="text" name="display">
+                    <input type="text" name="display" readonly> 
                 </div>
+                
                 <div>
-                   <input type="button" value="AC" onclick="clearDisplay()" class="operator">
-                    <input type="button" value="DEL" onclick="deleteLast()" class="operator">
-                    <input type="button" value="." onclick="appendValue('.')" class="operator">
-                    <input type="button" value="/" onclick="appendValue('/')" class="operator">
+                   <input type="button" value="AC" data-type="clear" class="operator control-btn">
+                   <input type="button" value="DEL" data-type="delete" class="operator control-btn">
+                   <input type="button" value="%" data-type="operator" class="operator control-btn"> 
+                   <input type="button" value="/" data-type="operator" class="operator">
                 </div>
+                
                 <div>
-                    <input type="button" value="7" onclick="appendValue('7')">
-                    <input type="button" value="8" onclick="appendValue('8')">
-                    <input type="button" value="9" onclick="appendValue('9')">
-                    <input type="button" value="*" onclick="appendValue('*')" class="operator">
+                    <input type="button" value="7" data-type="number">
+                    <input type="button" value="8" data-type="number">
+                    <input type="button" value="9" data-type="number">
+                    <input type="button" value="*" data-type="operator" class="operator">
                 </div>
+                
                 <div>
-                    <input type="button" value="4" onclick="appendValue('4')">
-                    <input type="button" value="5" onclick="appendValue('5')">
-                    <input type="button" value="6" onclick="appendValue('6')">
-                    <input type="button" value="-" onclick="appendValue('-')" class="operator">
+                    <input type="button" value="4" data-type="number">
+                    <input type="button" value="5" data-type="number">
+                    <input type="button" value="6" data-type="number">
+                    <input type="button" value="-" data-type="operator" class="operator">
                 </div>
+                
                 <div>
-                    <input type="button" value="1" onclick="appendValue('1')">
-                    <input type="button" value="2" onclick="appendValue('2')">
-                    <input type="button" value="3" onclick="appendValue('3')">
-                    <input type="button" value="+" onclick="appendValue('+')" class="operator">
+                    <input type="button" value="1" data-type="number">
+                    <input type="button" value="2" data-type="number">
+                    <input type="button" value="3" data-type="number">
+                    <input type="button" value="+" data-type="operator" class="operator">
                 </div>
+                
                 <div>
-                    <input type="button" value="00" onclick="appendValue('00')">
-                    <input type="button" value="0" onclick="appendValue('0')">
-                    <input type="button" value="=" class="equal" onclick="calculate()" class="operator">
+                    <input type="button" value="00" data-type="number">
+                    <input type="button" value="0" data-type="number">
+                    <input type="button" value="." data-type="decimal" class="operator control-btn">
+                    <input type="button" value="=" data-type="equals" class="equal operator">
                 </div>
             </form>
         </div>
     </div>
+
     <script src="script.js"></script>
 </body>
-</html> 
+</html>
