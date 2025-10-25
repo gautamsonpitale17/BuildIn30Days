@@ -36,9 +36,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function appendValue(val) {
         const lastChar = display.value.slice(-1);
-        if (['+', '-', '*', '/', '.'].includes(val) && ['+', '-', '*', '/', '.'].includes(lastChar)) {
+        
+        if (['+', '-', '*', '/', '%', '.'].includes(val) && ['+', '-', '*', '/', '%', '.'].includes(lastChar)) {
             return; 
         }
+
+        if (val === '00' && display.value === '') {
+            return;
+        }
+
         display.value += val;
     }
 
@@ -52,7 +58,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function calculate() {
         try {
-            let result = eval(display.value.replace(/%/g, '/100'));
+            let expression = display.value.replace(/%/g, '/100');
+            let result = eval(expression);
             
             if (result.toString().includes('.')) {
                 result = parseFloat(result.toFixed(10));
@@ -61,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
             display.value = result;
         } catch (e) {
             display.value = 'Error';
-            setTimeout(() => (display.value = ''), 1000);
+            setTimeout(() => (display.value = ''), 1000); 
         }
     }
 
@@ -88,16 +95,22 @@ document.addEventListener('DOMContentLoaded', () => {
         const key = event.key;
 
         buttons.forEach(button => {
-            if (button.value === key || (key === 'Enter' && button.value === '=') || (key === 'c' && button.value === 'AC') || (key === 'Backspace' && button.value === 'DEL')) {
+            let match = false;
+            if (button.value === key) match = true;
+            if (key === 'Enter' && button.value === '=') match = true;
+            if (key === 'Backspace' && button.value === 'DEL') match = true;
+            if (key.toLowerCase() === 'c' && button.value === 'AC') match = true;
+
+            if (match) {
                 button.classList.add('active');
                 setTimeout(() => button.classList.remove('active'), 100);
             }
         });
 
-        if (!isNaN(key) || ['+', '-', '*', '/', '.'].includes(key)) {
+        if (!isNaN(key) || ['+', '-', '*', '/', '%', '.'].includes(key)) {
             appendValue(key);
         } else if (key === 'Enter' || key === '=') {
-            event.preventDefault();
+            event.preventDefault(); 
             calculate();
         } else if (key === 'Backspace') {
             deleteLast();

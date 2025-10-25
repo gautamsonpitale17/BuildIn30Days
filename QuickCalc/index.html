@@ -6,7 +6,6 @@
     <title>QuickCalc</title>
     
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <link rel="stylesheet" href="style.css"> 
@@ -16,7 +15,7 @@
     <div class="container">
         
         <div id="status-bar">
-            <h1 id="project-name">QUICKCALC</h1>
+            <h1 id="project-name">QuickCalc</h1>
             
             <button id="theme-toggle">
                 <i class="fas fa-sun"></i> 
@@ -25,44 +24,36 @@
 
         <div class="calculator">
             <form class="buttons">
+                
                 <div class="display">
                     <input type="text" name="display" readonly> 
                 </div>
                 
-                <div>
-                   <input type="button" value="AC" data-type="clear" class="operator control-btn">
-                   <input type="button" value="DEL" data-type="delete" class="operator control-btn">
-                   <input type="button" value="%" data-type="operator" class="operator control-btn"> 
-                   <input type="button" value="/" data-type="operator" class="operator">
-                </div>
+                <input type="button" value="AC" data-type="clear" class="operator control-btn">
+                <input type="button" value="DEL" data-type="delete" class="operator control-btn">
+                <input type="button" value="%" data-type="operator" class="operator control-btn"> 
+                <input type="button" value="/" data-type="operator" class="operator">
                 
-                <div>
-                    <input type="button" value="7" data-type="number">
-                    <input type="button" value="8" data-type="number">
-                    <input type="button" value="9" data-type="number">
-                    <input type="button" value="*" data-type="operator" class="operator">
-                </div>
+                <input type="button" value="7" data-type="number">
+                <input type="button" value="8" data-type="number">
+                <input type="button" value="9" data-type="number">
+                <input type="button" value="*" data-type="operator" class="operator">
                 
-                <div>
-                    <input type="button" value="4" data-type="number">
-                    <input type="button" value="5" data-type="number">
-                    <input type="button" value="6" data-type="number">
-                    <input type="button" value="-" data-type="operator" class="operator">
-                </div>
+                <input type="button" value="4" data-type="number">
+                <input type="button" value="5" data-type="number">
+                <input type="button" value="6" data-type="number">
+                <input type="button" value="-" data-type="operator" class="operator">
                 
-                <div>
-                    <input type="button" value="1" data-type="number">
-                    <input type="button" value="2" data-type="number">
-                    <input type="button" value="3" data-type="number">
-                    <input type="button" value="+" data-type="operator" class="operator">
-                </div>
+                <input type="button" value="1" data-type="number">
+                <input type="button" value="2" data-type="number">
+                <input type="button" value="3" data-type="number">
+                <input type="button" value="+" data-type="operator" class="operator">
                 
-                <div>
-                    <input type="button" value="00" data-type="number">
-                    <input type="button" value="0" data-type="number">
-                    <input type="button" value="." data-type="decimal" class="operator control-btn">
-                    <input type="button" value="=" data-type="equals" class="equal operator">
-                </div>
+                <input type="button" value="00" data-type="number">
+                <input type="button" value="0" data-type="number">
+                <input type="button" value="." data-type="decimal" class="operator control-btn">
+                <input type="button" value="=" data-type="equals" class="equal operator">
+                
             </form>
         </div>
     </div>
