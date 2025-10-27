@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RapidKeys</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main id="app" class="container" role="main" aria-label="RapidKeys Typing Speed Tester">
+        <header class="app-header">
+            <h1>RapidKeys</h1>
+            <button id="theme-toggle" type="button" aria-label="Toggle light and dark theme">☀️</button>
+        </header>
+
+        <aside id="results" class="results" aria-label="Typing results dashboard">
+            <dl class="stats-grid">
+                <div class="stat">
+                    <dt>WPM</dt>
+                    <dd id="wpm">0</dd>
+                </div>
+                <div class="stat">
+                    <dt>Accuracy</dt>
+                    <dd id="accuracy">0%</dd>
+                </div>
+                <div class="stat">
+                    <dt>Time Left</dt>
+                    <dd id="time-left">00:30</dd>
+                </div>
+                <div class="stat">
+                    <dt>Errors</dt>
+                    <dd id="errors">0</dd>
+                </div>
+            </dl>
+        </aside>
+
+        <section id="test-area" aria-live="polite">
+            <div id="sentence-wrapper">
+                <p id="display-sentence" class="display-sentence" tabindex="0"></p>
+                <p id="interaction-hint">Click Start Test or hit any key to begin...</p>
+                <input
+                    type="text"
+                    id="typing-input"
+                    class="typing-input"
+                    aria-label="Typing input field"
+                    autofocus
+                    autocomplete="off"
+                    autocorrect="off"
+                    autocapitalize="off"
+                    spellcheck="false"
+                />
+            </div>
+
+            <div class="controls">
+                <button id="start-btn" type="button">Start</button>
+                <button id="reset-btn" type="button">Reset</button>
+
+                <select id="difficulty-select">
+                    <option value="" disabled selected hidden>Level</option>
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+
+                <select id="duration-select">
+                    <option value="" disabled selected hidden>Time</option>
+                    <option value="15">15s</option>
+                    <option value="30">30s</option>
+                    <option value="60">60s</option>
+                    <option value="120">120s</option>
+                </select>
+            </div>
+        </section>
+        
+        <section id="graph-area" class="results graph-results" aria-label="WPM and Accuracy Graph">
+            <h2 class="graph-title">Performance Over Time</h2>
+            <canvas id="performance-chart"></canvas>
+        </section>
+    </main>
+
+    <div id="sentence-bank" class="hidden" aria-hidden="true">
+        <div id="easy-sentences">
+            <p>investments involve putting money into stocks or assets to earn profit. risk and return are always connected. learning investment basics and diversification can help individuals grow wealth. understanding markets helps make financial decisions safer and more profitable for future goals.</p>
+            <p>to make a career in ai start with basics like python mathematics and data science. learn machine learning and deep learning frameworks. practice projects and online courses help build experience. understanding ai applications opens opportunities in tech companies startups and research globally.</p>
+            <p>ai is changing tech jobs by automating repetitive tasks. developers analysts and engineers need new skills to work with ai. learning ai tools and machine learning frameworks prepares professionals for future roles. adapting to ai-driven technologies ensures career growth and relevance.</p>
+        </div>
+        <div id="medium-sentences">
+            <p>Html is the foundation of every website and stands for HyperText Markup Language. Developers Use tags to structure content like headings, paragraphs, and lists. Learning Semantic HTML improves SEO and Accessibility. Forms and Multimedia can be embedded using APIs. Mastering DOM manipulation enhances Interactivity and User Experience on modern Websites.</p>
+            <p>Css or Cascading Style Sheets allows Developers to control Colors, Fonts, Layouts, and Animations. Flexbox and Grid techniques help build Responsive designs across all Devices. Transitions, Transformations, and Pseudo Classes improve Visual Appeal. Mastering Media Queries ensures proper display on Mobile, Tablet, and Desktop screens efficiently.</p>
+            <p>Javascript is used to make Websites Dynamic and Interactive. Developers Manipulate the DOM, handle Events, and fetch Data using APIs or JSON. Async functions improve Performance while handling HTTP requests. Understanding ES6 features, Promises, and Arrow Functions is Essential for writing Scalable, Maintainable, and Efficient Code in modern JS projects.</p>
+        </div>
+        <div id="hard-sentences">
+            <p>PostgreSQL 13! stores data securely in Tables & Columns. Use queries like SELECT name, age FROM users WHERE score > 80; or INSERT INTO accounts(id, balance) VALUES(101, 5000);. Indexes #improve speed, while transactions ensure ACID compliance. Backup @daily, monitor performance %, and encrypt sensitive_data to prevent SQLi, XSS & data leaks.</p>
+            <p>Node.js & Express.js handle HTTP requests efficiently. Middleware functions, JWT tokens, and bcrypt hashing secure APIs. Example: app.post('/login', async (req, res) => {...});. Environment variables $SECRET_KEY protect credentials. Use async/await for Promises, log errors #404 or #500, and implement rate-limiting % to prevent DDoS attacks in production!</p>
+            <p>React 18! uses Components, Props & State to build dynamic UIs. Hooks like useEffect() or useState() manage data. Style with CSS-in-JS @emotion or TailwindCSS #responsive. Fetch data via Axios or Fetch API $. Lazy-loading images, memoizing functions, and optimizing render cycles improve performance %. Debug errors using console.log() or network #tools.</p>
+        </div>
+    </div>
+</body>
+</html>
