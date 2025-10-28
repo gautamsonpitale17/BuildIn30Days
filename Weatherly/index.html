@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weatherly – Smart Weather Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Weatherly</h1>
+      <button id="themeToggle" title="Toggle Theme">🌙</button>
+    </header>
+
+    <div class="search-box">
+      <input
+        type="text"
+        id="cityInput"
+        placeholder="Enter city name..."
+        list="cityList"
+        autocomplete="off"
+      />
+      <datalist id="cityList">
+        <option value="London"></option>
+        <option value="New York"></option>
+        <option value="Tokyo"></option>
+        <option value="Paris"></option>
+        <option value="Mumbai"></option>
+        <option value="Sydney"></option>
+        <option value="Dubai"></option>
+        <option value="Toronto"></option>
+        <option value="Singapore"></option>
+        <option value="Berlin"></option>
+      </datalist>
+      <button id="searchBtn">Search</button>
+      <button id="locateBtn">📍</button>
+    </div>
+
+    <div id="weatherInfo" class="weather-info hidden">
+      <h2 id="cityName" class="city-name"></h2>
+
+      <div class="main-stats">
+        <img id="icon" alt="Weather Icon" class="weather-icon" />
+        <p id="temp" class="temperature"></p>
+      </div>
+
+      <p id="condition" class="condition"></p>
+
+      <div class="details-grid">
+        <div>
+          <span class="label">Humidity</span>
+          <p id="humidity" class="value"></p>
+        </div>
+        <div>
+          <span class="label">Wind Speed</span>
+          <p id="wind" class="value"></p>
+        </div>
+      </div>
+
+      <div class="aqi-row">
+        <span class="label">Air Quality Index</span>
+        <p id="aqiValue" class="value"></p>
+        <p id="aqiMessage" class="aqi-message"></p>
+      </div>
+    </div>
+
+    <p id="errorMsg" class="error-message"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
