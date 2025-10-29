@@ -1,0 +1,224 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --background-light: #e9eef2;
+  --text-light: #1e1e1e;
+  --container-bg-light: #e9eef2;
+  --shadow-light: #b8c4cf;
+  --highlight-light: #ffffff;
+  --background-dark: #1e1e1e;
+  --text-dark: #f8f8f8;
+  --container-bg-dark: #1e1e1e;
+  --shadow-dark: #0d0d0d;
+  --highlight-dark: #2b2b2b;
+  --primary-accent: #6c5ce7;
+  --radius-large: 18px;
+  --radius-small: 10px;
+}
+
+body {
+  background-color: var(--background-light);
+  color: var(--text-light);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem 0;
+  transition: all 0.4s ease;
+}
+
+header {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 1rem;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-light);
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.15);
+  transition: color 0.4s ease, text-shadow 0.4s ease;
+}
+
+#themeToggle {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--text-light);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+#themeToggle:hover {
+  transform: scale(1.1);
+  color: var(--primary-accent);
+}
+
+.converter-box {
+  background: var(--container-bg-light);
+  width: 90%;
+  max-width: 600px;
+  border-radius: var(--radius-large);
+  padding: 2rem;
+  margin-top: 1rem;
+  box-shadow: 8px 8px 15px var(--shadow-light),
+              -8px -8px 15px var(--highlight-light);
+  transition: all 0.4s ease;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  border-radius: var(--radius-small);
+  border: none;
+  background: var(--container-bg-light);
+  color: var(--text-light);
+  box-shadow: inset 4px 4px 8px var(--shadow-light),
+              inset -4px -4px 8px var(--highlight-light);
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+  outline: none;
+  box-shadow: inset 2px 2px 6px var(--shadow-light),
+              inset -2px -2px 6px var(--primary-accent);
+}
+
+.currency-select {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.currency-select select {
+  flex-grow: 1;
+  width: 45%;
+  padding: 0.9rem;
+  border: none;
+  border-radius: var(--radius-small);
+  background: var(--container-bg-light);
+  color: var(--text-light);
+  font-size: 1.1rem;
+  box-shadow: inset 3px 3px 6px var(--shadow-light),
+              inset -3px -3px 6px var(--highlight-light);
+  appearance: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.currency-select select:focus {
+  box-shadow: inset 2px 2px 6px var(--shadow-light),
+              inset -2px -2px 6px var(--primary-accent);
+}
+
+#swapBtn {
+  background: var(--container-bg-light);
+  color: var(--text-light);
+  border: none;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 5px 5px 10px var(--shadow-light),
+              -5px -5px 10px var(--highlight-light);
+  transition: all 0.3s ease;
+}
+
+#swapBtn:hover {
+  transform: scale(1.1);
+  box-shadow: inset 3px 3px 6px var(--shadow-light),
+              inset -3px -3px 6px var(--highlight-light);
+  color: var(--primary-accent);
+}
+
+.result {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: 600;
+  color: var(--text-light);
+  background: var(--container-bg-light);
+  border-radius: var(--radius-small);
+  box-shadow: inset 4px 4px 8px var(--shadow-light),
+              inset -4px -4px 8px var(--highlight-light);
+  padding: 1rem;
+}
+
+.chart-container h3 {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+body.dark {
+  background: var(--background-dark);
+  color: var(--text-dark);
+}
+
+body.dark header h1 {
+  color: var(--text-dark);
+  text-shadow: 0 0 10px rgba(108, 92, 231, 0.6);
+}
+
+body.dark .converter-box,
+body.dark .input-group input,
+body.dark .currency-select select,
+body.dark #swapBtn,
+body.dark .result {
+  background: var(--container-bg-dark);
+  color: var(--text-dark);
+  box-shadow: 8px 8px 15px var(--shadow-dark),
+              -8px -8px 15px var(--highlight-dark);
+}
+
+body.dark #swapBtn:hover {
+  box-shadow: inset 3px 3px 6px var(--shadow-dark),
+              inset -3px -3px 6px var(--highlight-dark);
+  color: var(--primary-accent);
+}
+
+@media (max-width: 600px) {
+  .converter-box {
+    padding: 1.5rem;
+  }
+  .currency-select {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .currency-select select {
+    width: 48%;
+  }
+  #swapBtn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  @media (max-width: 600px) {
+      #swapBtn {
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        margin-top: 0;
+      }
+      .currency-select {
+          flex-wrap: nowrap;
+      }
+  }
+}

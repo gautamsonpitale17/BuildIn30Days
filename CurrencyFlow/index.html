@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CurrencyFlow - Currency Converter</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+</head>
+<body class="dark">
+  <header>
+    <h1>CurrencyFlow</h1>
+    <button id="themeToggle">🌙</button>
+  </header>
+
+  <main class="converter-box">
+    <div class="input-group">
+      <input type="number" id="amount" placeholder="Enter amount" value="1.00" />
+    </div>
+
+    <div class="currency-select">
+      <select id="fromCurrency"></select>
+      <button id="swapBtn">⇄</button>
+      <select id="toCurrency"></select>
+    </div>
+
+    <div class="result" id="result">Loading conversion...</div>
+
+    <div class="chart-container">
+      <h3>Last 30 Days Trend</h3>
+      <canvas id="rateChart"></canvas>
+    </div>
+    </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
