@@ -67,7 +67,7 @@ body {
 }
 
 .logo {
-    font-size: clamp(40px, 5vw, 24px);
+    font-size: clamp(20px, 5vw, 24px);
     font-weight: 800;
     background: none; 
     color: var(--primary-color);
@@ -151,13 +151,6 @@ button:hover {
     min-width: 140px;
 }
 
-@media (max-width: 450px) {
-    .filters > div {
-        flex: 1 1 100%;
-        min-width: 100%;
-    }
-}
-
 .filters label {
     font-size: 14px;
     color: var(--text-secondary);
@@ -200,7 +193,6 @@ button:hover {
     max-width: 400px; 
 }
 
-
 .expense-list {
     list-style: none;
     display: flex;
@@ -226,17 +218,6 @@ button:hover {
     align-items: center;
     width: 100%;
     cursor: pointer; 
-}
-
-@media (max-width: 500px) {
-    .exp-item-content {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-    .exp-right {
-        margin-left: 64px;
-    }
 }
 
 .exp-item:hover {
@@ -364,66 +345,6 @@ button:hover {
     padding: 12px 20px;
 }
 
-@media (max-width: 600px) {
-    .topbar {
-        padding: 15px 20px;
-    }
-
-    #themeToggleBtn {
-        padding: 8px 12px;
-        font-size: 14px;
-        min-width: unset;
-    }
-
-    #addBtnOpen {
-        padding: 10px 15px;
-        font-size: 13px;
-    }
-
-    .topbar > div:last-child {
-        gap: 10px !important;
-    }
-}
-
-@media (min-width: 900px) {
-    .app {
-        gap: 30px;
-        grid-template-areas:
-            "topbar topbar"
-            "filters filters"
-            "chart list"
-            "footer footer";
-        grid-template-columns: 1fr 2fr; 
-        display: grid;
-    }
-
-    .chart-container {
-        min-width: unset; 
-        padding-bottom: 75%; 
-        max-width: unset;
-    }
-
-    .panel:nth-child(3) { 
-        grid-area: chart; 
-        display: flex;
-        flex-direction: column;
-    }
-    .panel:nth-child(4) { grid-area: list; }
-
-    .topbar { grid-area: topbar; }
-    .filters { 
-        grid-area: filters;
-        gap: 20px;
-        flex-wrap: nowrap;
-    }
-    .footer { grid-area: footer; }
-
-    .primary-btn {
-        padding: 14px 24px;
-        font-size: 16px;
-    }
-}
-
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
@@ -441,4 +362,97 @@ input[type=number] {
 
 .high-contrast-dark .primary-btn:hover {
     box-shadow: 0 4px 10px rgba(0, 188, 212, 0.4);
+}
+
+@media (max-width: 480px) {
+    .filters > div {
+        flex: 1 1 100%;
+        min-width: 100%;
+    }
+    .topbar {
+        padding: 15px 20px;
+    }
+    .topbar > div:last-child {
+        gap: 10px !important;
+    }
+    #themeToggleBtn {
+        padding: 8px 12px;
+        font-size: 14px;
+        min-width: unset;
+    }
+    #addBtnOpen {
+        padding: 10px 15px;
+        font-size: 13px;
+    }
+    .exp-item-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .exp-right {
+        margin-left: 55px; 
+    }
+}
+
+@media (min-width: 768px) {
+    .topbar {
+        padding: 20px 30px;
+    }
+    .primary-btn {
+        padding: 12px 20px;
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .app {
+        display: grid;
+        gap: 30px;
+        grid-template-areas:
+            "topbar topbar"
+            "filters filters"
+            "chart list"
+            "footer footer";
+        grid-template-columns: 1fr 2fr; 
+    }
+    .topbar { grid-area: topbar; }
+    .footer { grid-area: footer; }
+    .panel:nth-child(2) { 
+        grid-area: filters;
+        display: flex;
+    }
+    .filters { 
+        gap: 20px;
+        flex-wrap: nowrap;
+    }
+    .filters > div {
+        flex: 1 1 0%;
+        min-width: unset;
+    }
+    .panel:nth-child(3) { 
+        grid-area: chart; 
+        display: flex;
+        flex-direction: column;
+    }
+    .panel:nth-child(4) { grid-area: list; }
+    .chart-container {
+        padding-bottom: 90%; 
+        max-width: unset;
+    }
+    .primary-btn {
+        padding: 14px 24px;
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 1440px) {
+    body {
+        padding: min(4vw, 40px);
+    }
+    .app {
+        max-width: 1400px;
+    }
+    .panel {
+        padding: clamp(25px, 4vw, 40px);
+    }
 }
