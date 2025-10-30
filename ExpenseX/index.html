@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExpenseX</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="app">
+    <div class="topbar">
+        <div class="logo">ExpenseX</div>
+
+        <div style="display: flex; gap: 15px;">
+            <button class="small-btn" id="themeToggleBtn">☀️</button> 
+            <button class="primary-btn" id="addBtnOpen">+ Add Expense</button>
+        </div>
+    </div>
+
+    <div class="panel filters">
+        <div>
+            <label>Search</label>
+            <input type="text" id="searchInput" placeholder="Search title...">
+        </div>
+        <div>
+            <label>Month</label>
+            <input type="month" id="monthFilter">
+        </div>
+        <button class="small-btn" id="clearFilters">Clear</button>
+    </div>
+
+    <div class="panel">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <h3>Spending Chart</h3>
+            <div class="total-display-wrapper" style="font-size: 14px; color: var(--text-secondary);">
+                Total: <span id="totalDisplay" style="font-weight: bold;">0.00</span>
+            </div>
+        </div>
+        <div class="chart-container">
+            <canvas id="chart"></canvas>
+        </div>
+    </div>
+
+    <div class="panel">
+        <h3>Expenses</h3>
+        <ul id="expenseList" class="expense-list"></ul>
+    </div>
+
+    <div class="footer">ExpenseX - Track your spending smartly</div>
+</div>
+
+<div class="modal hidden" id="modal">
+    <div class="modal-panel">
+        <h3 id="modalTitle">Add Expense</h3>
+
+        <input id="titleInput" type="text" placeholder="Title">
+        <input id="amountInput" type="number" placeholder="Amount (INR)">
+        <input id="dateInput" type="date">
+
+        <select id="categoryInput">
+            <option>Food</option>
+            <option>Transport</option>
+            <option>Shopping</option>
+            <option>Bills</option>
+            <option>Others</option>
+        </select>
+
+        <div class="modal-actions">
+            <button class="cancel-btn" id="closeModal">Cancel</button>
+            <button class="save-btn primary-btn" id="saveExpense">Save</button>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
