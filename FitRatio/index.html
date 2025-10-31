@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>FitRatio</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<main class="container" role="main">
+
+  <section class="card header-card" aria-label="App Header">
+    <div class="header-content">
+      <h1 class="brand">FitRatio</h1>
+      <div class="header-actions" role="group" aria-label="Header actions">
+        <button id="unitsToggle" class="btn ghost small" aria-pressed="false" title="Toggle units">METRIC</button>
+        <button id="themeToggle" class="btn ghost theme-btn" aria-pressed="false" title="Toggle theme">🌙</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="card form-card" aria-labelledby="bmiCalcHeading">
+    <h2 id="bmiCalcHeading">Calculate Your Ratio</h2>
+
+    <form id="bmiForm">
+      <div class="row">
+        <label for="heightInput">Height (<span id="heightUnit">cm</span>)</label>
+        <input type="number" id="heightInput" name="heightInput" min="1" step="0.1" placeholder="175.0" required>
+      </div>
+
+      <div class="row">
+        <label for="weightKg">Weight (<span id="weightUnit">kg</span>)</label>
+        <input type="number" id="weightKg" name="weightKg" min="1" step="0.1" placeholder="70.0" required>
+      </div>
+      
+      <div class="row two">
+        <div>
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" min="1" placeholder="30" required>
+        </div>
+        <div>
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+        </div>
+      </div>
+      
+      <div class="row action-buttons">
+        <button type="submit" class="btn primary">Calculate</button>
+        <button type="button" id="resetBtn" class="btn ghost">Reset</button>
+      </div>
+    </form>
+  </section>
+
+  <section class="card results-card" aria-labelledby="bmiResultHeading">
+    <h2 id="bmiResultHeading" class="sr-only">Your Results</h2>
+    
+    <div class="stat bmi-result-box" id="bmiResultBox">
+      <div class="bmi-header">
+        <span class="stat-value" id="bmiValue">—</span>
+        <span class="stat-label">Your BMI</span>
+      </div>
+      <div class="bmi-status" id="bmiStatusText">Enter values and calculate</div>
+    </div>
+    
+    <div class="stat suggestion-box" id="suggestionBox" hidden>
+        <span class="stat-label">Weight Guidance</span>
+        <p id="weightSuggestion" class="suggestion-text">--</p>
+    </div>
+
+    <div class="results-grid">
+        <div class="stat chart-container">
+            <span class="stat-label">BMI Progress</span>
+            <canvas id="bmiChart"></canvas>
+        </div>
+        
+        <div class="stat bmr-box">
+            <span class="stat-label">Basal Metabolic Rate</span>
+            <span class="stat-value small" id="bmrValue">—</span>
+            <span class="bmr-units">kcal/day</span>
+        </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="toast" role="status" aria-live="polite" class="toast" hidden></div>
+
+<script src="script.js"></script>
+</body>
+</html>
