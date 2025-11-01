@@ -60,26 +60,4 @@ How to Use:
 
 
 
-# ExpenseX — Personal Expense Tracker
 
-
-
-## Features
-
-
-
-## Tech Stack
-
-| Technology | Purpose |
-|-----------|--------|
-| HTML5 | Structure |
-| CSS3 | Styling and responsiveness |
-| JavaScript | Core functionality |
- | Data visualization |
-| LocalStorage | Storing expense data |
-
-## How to Use
-
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/gautamsonpitale17/BuildIn30Days
