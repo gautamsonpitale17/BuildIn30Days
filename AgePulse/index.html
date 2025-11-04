@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgePulse</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator-container">
+        <div class="header-content">
+            <h1 class="project-name">AgePulse</h1> 
+            
+            <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark/light theme">
+                ☀️
+            </button>
+        </div>
+        
+        <div class="input-group">
+            <label for="dobInput">Date of Birth</label>
+            
+            <div class="date-wrapper">
+                <input type="date" id="dobInput" max="">
+            </div>
+        </div>
+
+        <button id="calculateBtn">Calculate Age</button>
+
+        <div id="resultContainer" class="result-container hidden">
+            <p id="ageResultLine" class="result-one-liner"></p> 
+        </div>
+        
+        <div id="error" class="error-message"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
