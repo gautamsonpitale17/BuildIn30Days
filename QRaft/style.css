@@ -1,0 +1,124 @@
+:root {
+    --bg: #111;
+    --card: #1c1c1c;
+    --text: #fff;
+    --button: #333;
+    --button-hover: #444;
+    --input: #222;
+}
+
+.light {
+    --bg: #f7f7f7;
+    --card: #ffffff;
+    --text: #111;
+    --button: #e5e5e5;
+    --button-hover: #d6d6d6;
+    --input: #f0f0f0;
+}
+
+body {
+    background: var(--bg);
+    font-family: Poppins, Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    transition: 0.3s;
+}
+
+.container {
+    background: var(--card);
+    padding: 32px;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.25);
+    color: var(--text);
+    transition: 0.3s;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.app-name {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0;
+    color: var(--text);
+}
+
+p {
+    font-size: 14px;
+    opacity: 0.7;
+    margin-bottom: 20px;
+}
+
+#qrText {
+    width: 100%;
+    padding: 13px;
+    border-radius: 10px;
+    border: none;
+    background: var(--input);
+    color: var(--text);
+    font-size: 16px;
+    outline: none;
+    margin-bottom: 15px;
+}
+
+.btn-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+#generateBtn, 
+#downloadBtn {
+    flex: 1;
+    padding: 14px;
+    font-size: 16px;
+    background: var(--button);
+    color: var(--text);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: 600;
+}
+
+#generateBtn:hover, 
+#downloadBtn:hover {
+    background: var(--button-hover);
+}
+
+#qrcode {
+    margin-top: 20px;
+    padding: 15px;
+    background: var(--input);
+    border-radius: 12px;
+    min-height: 256px;
+    min-width: 256px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.theme-btn {
+    padding: 8px 10px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    background: var(--button);
+    color: var(--text);
+    transition: 0.3s;
+}
+
+.theme-btn:hover {
+    background: var(--button-hover);
+}

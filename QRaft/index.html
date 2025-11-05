@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QRaft</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="top-bar">
+            <h2 class="app-name">QRaft</h2>
+            <button id="themeToggle" class="theme-btn">🌙</button>
+        </div>
+
+        <p>Enter text or URL to generate QR</p>
+
+        <input 
+            type="text" 
+            id="qrText" 
+            placeholder="Enter text or URL..."
+        >
+
+        <div class="btn-box">
+            <button id="generateBtn">Generate</button>
+            <button id="downloadBtn">Download</button>
+        </div>
+
+        <div id="qrcode"></div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
