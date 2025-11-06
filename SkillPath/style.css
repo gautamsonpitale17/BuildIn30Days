@@ -1,0 +1,193 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --text-dark: #111;
+    --text-light: #fff;
+    --bg-dark: #0b0e11;
+    --bg-light: #f4f4f4;
+    --container-dark: rgba(255, 255, 255, 0.08);
+    --container-light: #ffffff;
+    --border-dark: rgba(255, 255, 255, 0.15);
+    --border-light: #ddd;
+    
+    --accent-light: #111;
+    --accent-dark: #fff;
+    
+    --btn-bg-dark: #fff;
+    --btn-text-dark: #111;
+    --btn-bg-light: #111;
+    --btn-text-light: #fff;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark {
+    background: var(--bg-dark);
+    color: var(--text-light);
+    --accent-color: var(--accent-dark);
+}
+body.light {
+    background: var(--bg-light);
+    color: var(--text-dark);
+    --accent-color: var(--accent-light);
+}
+
+.container {
+    width: 100%;
+    max-width: 620px;
+    padding: 40px;
+    border-radius: 12px;
+    backdrop-filter: blur(8px);
+    transition: 0.3s;
+}
+
+body.dark .container {
+    background: var(--container-dark);
+    border: 1px solid var(--border-dark);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+body.light .container {
+    background: var(--container-light);
+    border: 1px solid var(--border-light);
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
+}
+
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    margin-bottom: 35px;
+}
+
+.header-row h2 {
+    font-size: 35px;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin: 0;
+}
+
+#themeToggle {
+    background: transparent;
+    border: none;
+    color: inherit;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+    transform: translateY(-1px); 
+}
+
+body.dark #themeToggle:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+body.light #themeToggle:hover {
+    background: rgba(0, 0, 0, 0.08);
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 15px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    display: block;
+}
+
+select,
+button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    font-size: 15px;
+    outline: none;
+    transition: 0.2s;
+}
+
+select {
+    background: var(--bg-dark);
+    color: var(--text-light);
+    border: 1px solid var(--border-dark);
+}
+body.light select {
+    background: var(--container-light);
+    color: var(--text-dark);
+    border: 1px solid var(--border-light);
+}
+select:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px var(--accent-color);
+}
+
+button {
+    font-weight: 600;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+body.dark button {
+    background: var(--btn-bg-dark); 
+    color: var(--btn-text-dark);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
+}
+
+body.light button {
+    background: var(--btn-bg-light);
+    color: var(--btn-text-light);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+    filter: brightness(0.9);
+}
+
+#result {
+    margin-top: 25px;
+    padding: 15px;
+    border-left: 5px solid var(--accent-color);
+    border-radius: 6px;
+    font-size: 15px;
+    line-height: 1.5;
+    background: transparent;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.4s, background-color 0.3s;
+}
+body.light #result {
+    background: rgba(0, 0, 0, 0.05);
+}
+body.dark #result {
+    background: rgba(255, 255, 255, 0.05);
+}
+#result.show {
+    display: block;
+    opacity: 1;
+}
+
+@media (max-width: 500px) {
+    .container {
+        margin: 20px;
+        padding: 25px;
+    }
+}

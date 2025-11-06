@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SkillPath – Career Suggestion Tool</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body class="dark">
+
+    <div class="container">
+
+        <div class="header-row">
+            <h2>SkillPath</h2>
+            <button id="themeToggle">🌙</button>
+        </div>
+
+        <div class="input-group">
+            <label for="interest">What do you enjoy the most?</label>
+            <select id="interest">
+                <option value="">-- Select Your Interest --</option>
+                <option value="creative">Creative Work</option>
+                <option value="tech">Technology & Programming</option>
+                <option value="social">Helping & Communicating</option>
+                <option value="business">Business & Strategy</option>
+                <option value="numbers">Math & Problem-Solving</option>
+                <option value="mechanical">Machines & Tools</option>
+                <option value="teaching">Teaching & Training</option>
+                <option value="science">Scientific Research</option>
+                <option value="health">Health & Medicine</option>
+                <option value="arts">Music / Acting / Writing</option>
+                <option value="law">Law & Public Policy</option>
+                <option value="travel">Travel & Hospitality</option>
+                <option value="sports">Sports & Fitness</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label for="strength">Your Strength</label>
+            <select id="strength">
+                <option value="">-- Select Your Strength --</option>
+                <option value="design">Visual Creativity</option>
+                <option value="coding">Logical Thinking / Coding</option>
+                <option value="communication">Communication & Public Speaking</option>
+                <option value="leadership">Leadership & Strategy</option>
+                <option value="analysis">Analytical Thinking</option>
+                <option value="hands">Hands-on / Practical Work</option>
+                <option value="teaching">Teaching</option>
+                <option value="research">Research Ability</option>
+                <option value="empathy">Empathy & Helping</option>
+                <option value="writing">Writing & Content</option>
+                <option value="fitness">Physical Strength & Coaching</option>
+                <option value="organization">Organizing & Planning</option>
+            </select>
+        </div>
+
+        <button onclick="suggestCareer()">Suggest Career</button>
+
+        <div id="result"></div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
