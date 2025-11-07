@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoDash</title>
+
+    <script>
+        if (localStorage.getItem("theme") === "dark") {
+            document.documentElement.classList.add("dark");
+        }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="app" class="app-container">
+    <header class="header-section">
+        
+        <h1 class="main-title">CryptoDash</h1>
+        
+        <button id="theme-toggle-button" onclick="toggleTheme()"
+            class="theme-toggle-button"
+            aria-label="Toggle dark/light mode">
+            <svg id="theme-icon" class="theme-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"></svg>
+        </button>
+        
+    </header>
+
+    <div class="card search-sort-bar">
+        <input type="text" id="search-input"
+            placeholder="Search by name or symbol (e.g., Bitcoin, BTC)..."
+            class="input-field">
+        
+        <select id="sort-select" class="select-field">
+            <option value="market_cap_desc">Market Cap (Highest)</option>
+            <option value="price_desc">Price (Highest)</option>
+            <option value="price_asc">Price (Lowest)</option>
+            <option value="change_24h_desc">24h Change (Highest)</option>
+        </select>
+    </div>
+
+    <div class="card table-wrapper">
+        <div id="table-scroll" class="table-scroll-area">
+            <table class="crypto-table">
+                <thead id="table-header-dynamic"></thead>
+                <tbody id="crypto-list-body">
+                    <tr id="loading-row">
+                        <td colspan="5" class="loading-message">Loading crypto data...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="message-box" class="message-box hidden"></div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,276 @@
+:root {
+--bg-primary: #e0e5ec;
+--card-bg: #f0f3f6;
+--table-header-bg: #ccd2da;
+--text-primary: #1f2937;
+--text-secondary: #4b5563;
+--input-bg: #ffffff;
+--accent-color: #059669;
+--hover-bg: #d7dbdf;
+--shadow-light: #ffffff;
+--shadow-dark: #afb5c0;
+--positive-color: #10b981;
+--negative-color: #ef4444;
+--title-color: #000000;
+--title-shadow: none;
+}
+
+.dark {
+/* Outer Background (body) is now Darker Grey */
+--bg-primary: #1e2023;
+/* Main Container/Card Backgrounds are Black */
+--card-bg: #101215;
+--table-header-bg: #1e2023;
+--input-bg: #101215;
+
+--text-primary: #f0f0f0;
+--text-secondary: #c0c0c0;
+
+--accent-color: #81a8ff;
+--hover-bg: #1e2023;
+--shadow-light: #2c2e33;
+--shadow-dark: #000000;
+--positive-color: #34d399;
+--negative-color: #fca5a5;
+--title-color: #f0f0f0;
+--title-shadow: none;
+}
+
+* { box-sizing: border-box; }
+
+body {
+height: 100vh;
+overflow: hidden;
+padding: 1rem;
+display: flex;
+justify-content: center;
+align-items: flex-start;
+font-family: 'Inter', sans-serif;
+background-color: var(--bg-primary);
+color: var(--text-primary);
+transition: background-color .5s, color .5s;
+}
+
+.app-container {
+max-width: 1280px;
+width: 100%;
+display: flex;
+flex-direction: column;
+max-height: calc(100vh - 2rem);
+}
+
+.header-section {
+margin-bottom: 1rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.main-title {
+font-size: 2.7rem;
+font-weight: 900;
+letter-spacing: -0.05em;
+color: var(--title-color);
+text-shadow: none;
+transition: color .5s, text-shadow .5s;
+}
+
+.theme-toggle-button {
+padding: 0.75rem;
+border-radius: 9999px;
+font-size: 1.25rem;
+background-color: var(--card-bg);
+border: none;
+cursor: pointer;
+transition: background-color .3s, box-shadow .3s;
+}
+.theme-toggle-button:hover { background-color: var(--hover-bg); }
+.theme-icon {
+width: 1.5rem;
+height: 1.5rem;
+transition: stroke .5s;
+color: var(--text-primary);
+}
+
+.card {
+background-color: var(--card-bg);
+padding: 1rem;
+border-radius: 0.75rem;
+margin-bottom: 1rem;
+transition: background-color .5s, box-shadow .5s;
+}
+
+.search-sort-bar {
+display: flex;
+flex-direction: column;
+gap: 1rem;
+}
+@media (min-width: 640px) {
+.search-sort-bar { flex-direction: row; }
+}
+
+.input-field,
+.select-field {
+flex-grow: 1;
+padding: 0.75rem;
+border-radius: 0.5rem;
+background-color: var(--input-bg);
+color: var(--text-primary);
+border: 1px solid rgba(0,0,0,0.15);
+box-shadow: none !important;
+transition: background-color .5s, border .2s, color .5s;
+}
+
+.dark .input-field,
+.dark .select-field {
+border: 1px solid rgba(255,255,255,0.08);
+}
+
+.input-field:focus,
+.select-field:focus {
+outline: none;
+border: 1.5px solid var(--accent-color);
+}
+
+.table-wrapper {
+overflow: hidden;
+flex-grow: 1;
+display: flex;
+flex-direction: column;
+min-height: 0;
+}
+
+.crypto-table {
+width: 100%;
+border-collapse: collapse;
+}
+
+.table-scroll-area {
+overflow-y: auto;
+flex-grow: 1;
+}
+
+.table-scroll-area::-webkit-scrollbar { width: 8px; }
+.table-scroll-area::-webkit-scrollbar-thumb {
+background-color: var(--text-secondary);
+border-radius: 4px;
+}
+
+.table-row-hover {
+cursor: pointer;
+border-bottom: 1px solid var(--table-header-bg);
+}
+.table-row-hover:hover { background-color: var(--hover-bg); }
+
+.crypto-table th {
+background-color: var(--table-header-bg);
+color: var(--text-secondary);
+padding: 0.75rem 0.5rem;
+font-size: .75rem;
+text-transform: uppercase;
+text-align: left;
+position: sticky;
+top: 0;
+z-index: 10;
+transition: background-color .5s, color .5s;
+}
+.crypto-table th:first-child { padding-left: 1rem; }
+.crypto-table th:last-child { padding-right: 1rem; }
+
+.column-rank { width: 40px; }
+.column-coin { padding-left: 1.5rem; }
+.column-price, .column-market-cap, .column-change { text-align: right; padding-right: 1.5rem; }
+
+.crypto-table td {
+padding: 0.75rem 1.5rem;
+color: var(--text-primary);
+font-size: .875rem;
+vertical-align: middle;
+}
+.crypto-table td:first-child { padding-left: 1rem; }
+.crypto-table td:last-child { padding-right: 1rem; }
+.column-price-body, .column-change-body { text-align: right; }
+.column-market-cap-body { text-align: right; }
+
+.coin-info {
+display: flex;
+align-items: center;
+}
+.coin-icon {
+height: 2rem;
+width: 2rem;
+border-radius: 50%;
+margin-right: .75rem;
+flex-shrink: 0;
+}
+.coin-name { font-weight: 600; }
+.coin-symbol {
+font-size: .75rem;
+color: var(--text-secondary);
+text-transform: uppercase;
+}
+
+.positive { color: var(--positive-color); font-weight: 600; }
+.negative { color: var(--negative-color); font-weight: 600; }
+
+.message-box {
+position: fixed;
+bottom: 1rem;
+right: 1rem;
+padding: 1rem;
+border-radius: .5rem;
+color: white;
+background-color: var(--accent-color);
+z-index: 50;
+}
+.hidden { display: none !important; }
+
+.loading-message {
+text-align: center;
+font-size: 1.125rem;
+color: var(--text-secondary);
+padding: 2rem;
+}
+
+.hidden-sm { display: none; }
+.hidden-md { display: none; }
+.mobile-label { display: none; }
+
+@media (max-width: 480px) {
+.crypto-table td, 
+.crypto-table th {
+padding-left: 0.5rem;
+padding-right: 0.5rem;
+font-size: .8rem;
+}
+.coin-icon {
+height: 1.5rem;
+width: 1.5rem;
+margin-right: .5rem;
+}
+.coin-name {
+font-size: .8rem;
+}
+.coin-symbol {
+font-size: .6rem;
+}
+.column-coin { padding-left: 0.5rem; }
+.column-price, .column-market-cap, .column-change { padding-right: 0.5rem; }
+
+.hidden-md { display: none !important; }
+}
+
+@media (min-width: 481px) {
+.hidden-md { display: table-cell; }
+.crypto-table td { padding: 0.75rem 0.5rem; }
+.crypto-table th { padding: 0.75rem 0.5rem; }
+.column-coin { padding-left: 1rem; }
+.column-price, .column-market-cap, .column-change { padding-right: 1rem; }
+}
+
+@media (min-width: 641px) {
+.hidden-sm, .hidden-md { display: table-cell; }
+.crypto-table td { padding: 0.75rem 1.5rem; }
+.crypto-table th { padding: 0.75rem 1.5rem; }
+.column-coin { padding-left: 1.5rem; }
+.column-price, .column-market-cap, .column-change { padding-right: 1.5rem; }
+}
