@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>SwapDocs</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <main class="app">
+        <header class="header">
+            <div class="header-content">
+                <h1>SwapDocs</h1>
+            </div>
+            <div class="mode-toggle">
+                <button id="modeToggle">☀️ Light</button>
+            </div>
+        </header>
+        <section class="uploader">
+            <label class="dropzone" id="dropzone">
+                <input id="fileInput" type="file" />
+                <div class="dz-content">
+                    <strong>Drag & drop a file here</strong>
+                    <span>or click to choose (text / image files)</span>
+                </div>
+            </label>
+            <div class="controls">
+                <div class="control-row">
+                    <label for="targetSelect">Convert to</label>
+                    <select id="targetSelect">
+                        <optgroup label="Document formats">
+                            <option value="pdf">PDF (.pdf)</option>
+                        </optgroup>
+                        <optgroup label="Image formats">
+                            <option value="image/png">PNG (.png)</option>
+                            <option value="image/jpeg">JPEG (.jpg)</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="actions">
+                    <button id="convertBtn" class="btn" disabled>Convert & Download</button>
+                    <button id="resetBtn" class="btn secondary" disabled>Reset</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
