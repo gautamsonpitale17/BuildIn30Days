@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WordFall</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    
+    <div id="headerRow">
+      <h1 id="gameTitle">WordFall</h1>
+      <p class="time-display">Time Left: <span id="timeLeft">30</span></p>
+    </div>
+
+    <div id="gameArea">
+      
+      <div id="levelSelect" class="level-screen">
+        <label for="difficulty">Choose Difficulty:</label>
+        <select id="difficulty">
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+        <button id="startBtn">Start Game</button>
+      </div>
+      
+    </div>
+
+    <input type="text" id="wordInput" placeholder="Type here..." autofocus autocomplete="off" autocorrect="off">
+    
+    <div class="buttons" id="controlButtons">
+      <button id="pauseBtn">Pause</button>
+      <button id="restartBtn">Restart</button>
+      <button id="difficultyBtn">Difficulty</button>
+    </div>
+
+    <div id="gameOverScreen" class="overlay">
+      <h2>Time's Up!</h2>
+      <p id="finalScore"></p>
+      <button id="restartBtnOverlay">Play Again</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
