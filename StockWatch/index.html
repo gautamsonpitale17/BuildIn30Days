@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StockWatch</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <header class="header">
+        <h1 class="project-title">Stock<span>Watch</span></h1>
+        <button class="theme-toggle" id="theme-toggle">🌙</button> 
+    </header>
+
+    <main class="dashboard-grid">
+        <section class="sidebar">
+            <div class="card">
+                <h2 class="section-title">My Watchlist</h2>
+                <div id="watchlist-container" class="watchlist"></div>
+            </div>
+        </section>
+
+        <section class="main-view">
+            <div class="card" id="main-stock-view">
+                <canvas id="stockChart" style="display:none;"></canvas>
+            </div>
+        </section>
+    </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
