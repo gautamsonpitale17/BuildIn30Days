@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SpeedLane</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-wrapper">
+    <h1>SpeedLane</h1>
+
+    <div class="controls">
+      <select id="difficulty">
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+      <button id="start-btn">Start Game</button>
+      <button id="pause-btn">Pause</button>
+    </div>
+
+    <div class="game-container">
+      <div class="scoreboard">
+        <span>Score: <span id="score">0</span></span>
+        <span>Lives: <span id="lives">3</span></span>
+        <span>High Score: <span id="high-score">0</span></span>
+      </div>
+
+      <div class="game-road">
+        <div class="lane-line line1"></div>
+        <div class="lane-line line2"></div>
+        <div class="player-car">
+          <img src="./images/orange_car.png" alt="Player Car">
+        </div>
+      </div>
+
+      <div class="power-up-info" id="power-up-info"></div>
+    </div>
+
+    <div id="game-over">
+      <h2>Game Over!</h2>
+      <p>Your Score: <span id="final-score">0</span></p>
+      <p>High Score: <span id="final-high-score">0</span></p>
+      <button id="restart-btn">Restart</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

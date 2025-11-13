@@ -1,0 +1,179 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: #0a0a0a;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-wrapper {
+  width: 600px;
+  border: 3px solid #555;
+  border-radius: 20px;
+  padding: 20px;
+  background: #111;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  margin: 0 0 15px 0;
+  font-size: 36px;
+  font-weight: 900;
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+  font-family: 'Arial Black', Arial, sans-serif;
+}
+
+.controls {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.controls button,
+.controls select {
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: none;
+  background: #222;
+  color: #fff;
+  cursor: pointer;
+}
+
+.controls button:hover,
+.controls select:hover {
+  background: #444;
+}
+
+.game-container {
+  width: 100%;
+  border: 2px solid #555;
+  border-radius: 15px;
+  overflow: hidden;
+  background: #111;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.scoreboard {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  font-size: 14px;
+  color: #fff;
+  border-bottom: 2px solid #555;
+  box-sizing: border-box;
+}
+
+.game-road {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  background: #222;
+  border-radius: 15px;
+  margin-top: 5px;
+  overflow: hidden;
+}
+
+.lane-line {
+  position: absolute;
+  width: 6px;
+  height: 100px;
+  background: #555;
+  top: 0;
+  animation: moveRoad 1s linear infinite;
+  border-radius: 3px;
+}
+
+.lane-line.line1 { left: calc(33.33% - 3px); }
+.lane-line.line2 { left: calc(66.66% - 3px); }
+
+@keyframes moveRoad {
+  0% { top: -100px; }
+  100% { top: 500px; }
+}
+
+.player-car {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  bottom: 10px;
+}
+
+.player-car img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  transform: rotate(180deg);
+  transition: transform 0.2s ease;
+}
+
+.obstacle {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: -100px;
+  border-radius: 10px;
+  background-size: cover;
+}
+
+.power-up {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: -40px;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #fff;
+  z-index: 10;
+}
+
+.power-up.s { background: #0ff; color: black; }
+.power-up.d { background: #f0f; color: white; }
+.power-up.m { background: #ff0; color: black; }
+
+#power-up-info {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #ff0;
+  text-align: center;
+}
+
+#game-over {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.95);
+  color: white;
+  text-align: center;
+  padding-top: 150px;
+  font-size: 24px;
+}
+
+#game-over button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  background: #222;
+  color: white;
+}
+
+#game-over button:hover { background: #444; }
