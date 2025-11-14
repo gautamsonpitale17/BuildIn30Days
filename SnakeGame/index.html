@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SnakeGame</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="game-container">
+    <h1>SnakeGame🐍</h1>
+    <div class="scoreboard">
+      <div>Score: <span id="score">0</span></div>
+      <div class="hidden-while-playing">High: <span id="highscore">0</span></div>
+    </div>
+    <div class="settings">
+      <label for="difficulty">Difficulty:</label>
+      <select id="difficulty">
+        <option value="easy">Easy</option>
+        <option value="medium" selected>Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+    </div>
+    <div class="canvas-wrapper">
+      <canvas id="game" width="500" height="500"></canvas>
+      <div id="gameOverBox" class="game-overlay">
+        <h2>GAME OVER</h2>
+        <p>Score: <span id="finalScore">0</span></p>
+        <p>High Score: <span id="finalHighscore">0</span></p>
+        <button id="restartFromGameOver">Play Again</button>
+      </div>
+    </div>
+    <div class="controls">
+      <button id="startBtn">Start</button>
+      <button id="pauseBtn">Pause</button>
+      <button id="restartBtn">Restart</button>
+    </div>
+    <div id="mobile-controls" class="mobile-controls">
+      <button id="up-btn" class="dir-btn up-btn">▲</button>
+      <button id="left-btn" class="dir-btn left-btn">◀</button>
+      <button id="right-btn" class="dir-btn right-btn">▶</button>
+      <button id="down-btn" class="dir-btn down-btn">▼</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
