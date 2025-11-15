@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CodeFormater</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container-wrapper">
+    <div class="container">
+      <div class="card main-card">
+        <div class="card-header">
+          <h1>CodeFormater</h1>
+        </div>
+        <textarea id="input" placeholder="Paste your messy code here..." spellcheck="false"></textarea>
+        <div class="controls">
+          <button id="formatBtn" class="btn primary">Format (Ctrl+Enter)</button>
+          <button id="clearBtn" class="btn secondary">Clear</button>
+        </div>
+        <div class="output-section hidden" id="outputCard">
+          <label class="small">Formatted Output</label>
+          <pre id="output" class="output"></pre>
+          <button id="copyBtn" class="btn tertiary copyBtn">Copy</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.7/beautify.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.7/beautify-html.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.7/beautify-css.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
