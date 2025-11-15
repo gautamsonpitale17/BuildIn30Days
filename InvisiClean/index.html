@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InvisiClean</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-theme">
+  <div class="container">
+    <header>
+      <h1 class="project-title">InvisiClean</h1>
+      <button id="themeToggle" onclick="toggleTheme()">☀️</button>
+    </header>
+
+    <textarea id="inputText" placeholder="Paste your text or code here..." oninput="autoClean()"></textarea>
+
+    <div class="controls">
+      <button onclick="removeHiddenUnicode()">Clean Text</button>
+      <button id="resetBtn" onclick="resetApp()">Reset</button>
+    </div>
+
+    <div id="status"></div>
+
+    <textarea id="output" readonly placeholder="Clean text will appear here..."></textarea>
+
+    <div class="stats">
+      <p>Original Length: <span id="originalCount">0</span></p>
+      <p>Cleaned Length: <span id="cleanedCount">0</span></p>
+      <p>Characters Removed: <span id="removedCount">0</span></p>
+    </div>
+
+    <div class="copy-container">
+      <button id="copyBtn" onclick="copyText()">Copy Clean Text</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
