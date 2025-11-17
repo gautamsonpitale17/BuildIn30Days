@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CipherVault</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="modal" id="lockModal">
+        <div class="modal-card">
+            <h2 class="ciphervault-title">CipherVault</h2>
+            <input id="masterPwd" type="password" placeholder="Enter Password">
+            <button id="unlockBtn">Unlock</button>
+        </div>
+    </div>
+
+    <div class="vault-box hidden" id="vaultBox"> 
+        <h2 class="ciphervault-title">CipherVault</h2>
+
+        <div class="panel" id="notePanel">
+            <input id="noteTitle" placeholder="Note title">
+            <textarea id="noteBody" rows="8" placeholder="Type your secret note here..."></textarea>
+            <div class="editor-actions">
+                <button id="saveNoteBtn">Save</button>
+                <button id="cancelNoteBtn">Cancel</button>
+            </div>
+        </div>
+
+        <div class="panel hidden" id="noteView">
+            <h3 id="viewTitle"></h3>
+            <pre id="viewContent"></pre>
+            <div class="view-actions">
+                <button id="copyBtn">Copy</button>
+                <button id="closeViewBtn">Close</button>
+            </div>
+        </div>
+
+        <div class="vault-actions">
+            <button id="addNoteBtn">Add Note</button>
+        </div>
+
+        <div class="notes-list" id="notesList"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
