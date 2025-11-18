@@ -1,0 +1,253 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    background: #f4f6fa;
+    color: #111111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    transition: background 0.3s, color 0.3s;
+}
+
+.container {
+    background: #ffffff;
+    padding: 25px 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 800px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    color: #111111;
+    margin: 0;
+    font-size: 34px;
+    font-family: 'Georgia', serif;
+    font-weight: bold;
+}
+
+h2, h3 {
+    color: #111111;
+}
+
+#themeToggle {
+    font-size: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #111111;
+    padding: 0;
+    line-height: 1;
+}
+
+textarea {
+    width: 100%;
+    height: 200px;
+    padding: 15px;
+    font-size: 15px;
+    border-radius: 10px;
+    border: 1px solid #cccccc;
+    background: #f9fafb;
+    color: #111111;
+    resize: none;
+    margin-top: 15px;
+    outline: none;
+    transition: border 0.2s;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+textarea:focus {
+    border-color: #555555;
+}
+
+.controls-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.controls-left, .controls-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.buttons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+select, button {
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid #cccccc;
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+    background: #ffffff;
+    color: #111111;
+}
+
+#summarizeBtn {
+    background: #1e40af;
+    color: #ffffff;
+    border: none;
+    transition: background 0.3s;
+}
+
+#summarizeBtn:hover {
+    background: #1d4ed8;
+}
+
+#resetBtn {
+    background: #333333;
+    color: #ffffff;
+    border: none;
+    transition: background 0.3s;
+}
+
+#resetBtn:hover {
+    background: #555555;
+}
+
+#copyBtn, #downloadBtn {
+    background: #dddddd;
+    color: #111111;
+    border: none;
+    transition: background 0.3s;
+}
+
+#copyBtn:hover, #downloadBtn:hover {
+    background: #cccccc;
+}
+
+#loading {
+    display: none;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #1e40af;
+    animation: blink 1s linear infinite;
+}
+
+@keyframes blink {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0.2; }
+}
+
+#summaryContainer {
+    display: none;
+    margin-top: 20px;
+}
+
+#summaryContainer h2 {
+    color: #111111;
+}
+
+#summary {
+    background: #f9fafb;
+    border: 1px solid #cccccc;
+    padding: 15px;
+    border-radius: 10px;
+    min-height: 100px;
+    white-space: pre-wrap;
+    color: #111111;
+}
+
+body.dark {
+    background: #000000;
+    color: #ffffff;
+}
+
+body.dark .container {
+    background: #111111;
+    box-shadow: 0 0 0 1px #444444;
+}
+
+body.dark h1, body.dark h2, body.dark h3, body.dark #themeToggle {
+    color: #ffffff;
+}
+
+body.dark textarea {
+    background: #333333;
+    color: #ffffff;
+    border-color: #444444;
+}
+
+body.dark textarea:focus {
+    border-color: #cccccc;
+}
+
+body.dark select {
+    background: #333333;
+    color: #ffffff;
+    border-color: #444444;
+}
+
+body.dark #loading {
+    color: #cccccc;
+}
+
+body.dark #summary {
+    background: #333333;
+    border-color: #444444;
+    color: #ffffff;
+}
+
+body.dark #summarizeBtn {
+    background: #1e40af;
+    color: #ffffff;
+}
+
+body.dark #summarizeBtn:hover {
+    background: #1d4ed8;
+}
+
+body.dark #resetBtn {
+    background: #333333;
+    color: #ffffff;
+}
+
+body.dark #resetBtn:hover {
+    background: #555555;
+}
+
+body.dark #copyBtn, body.dark #downloadBtn {
+    background: #cccccc;
+    color: #111111;
+}
+
+body.dark #copyBtn:hover, body.dark #downloadBtn:hover {
+    background: #999999;
+}
+
+@media (max-width: 650px) {
+    .controls-wrapper {
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
+    }
+    .controls-left, .controls-right {
+        justify-content: space-between;
+        width: 100%;
+    }
+    .controls-left label {
+        white-space: nowrap;
+    }
+}

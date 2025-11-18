@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickBrief</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark">
+    <div class="container">
+        <div class="header">
+            <h1>QuickBrief</h1>
+            <button id="themeToggle">☀️</button>
+        </div>
+
+        <textarea id="inputText" placeholder="Paste your text here..."></textarea>
+
+        <div class="controls-wrapper">
+            <div class="controls-left">
+                <label for="summaryLength">Summary Length:</label>
+                <select id="summaryLength">
+                    <option value="0.1">10%</option>
+                    <option value="0.25" selected>25%</option>
+                    <option value="0.5">50%</option>
+                </select>
+            </div>
+            <div class="controls-right">
+                <button id="summarizeBtn">Summarize</button>
+                <button id="resetBtn">Reset</button>
+            </div>
+        </div>
+
+        <div id="loading" class="loading">⌛Loading...</div>
+
+        <div id="summaryContainer">
+            <h2>Summary:</h2>
+            <p id="summary"></p>
+            <div class="buttons">
+                <button id="copyBtn">Copy</button>
+                <button id="downloadBtn">Download</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
