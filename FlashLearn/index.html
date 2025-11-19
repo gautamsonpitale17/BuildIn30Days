@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlashLearn</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>FlashLearn</h1>
+
+        <div id="flashcard" class="flashcard" onclick="flipCard()">
+            <div class="flashcard-inner">
+                <div class="flashcard-front"></div>
+                <div class="flashcard-back"></div>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button onclick="prevCard()">Previous</button>
+            <button onclick="nextCard()">Next</button>
+            <button onclick="editCardToggle()">Edit</button>
+        </div>
+
+        <div class="add-card-section">
+            <div class="add-card-form" id="editCardForm">
+                <h2>Edit Card</h2>
+                <input type="text" id="editQuestion" placeholder="Question">
+                <input type="text" id="editAnswer" placeholder="Answer">
+                <button onclick="saveEdit()">Save</button>
+                <button class="delete-button" onclick="deleteCard()">Delete</button>
+            </div>
+
+            <div class="add-card-form" id="addCardForm">
+                <input type="text" id="question" placeholder="Question">
+                <input type="text" id="answer" placeholder="Answer">
+                <button onclick="addCard()">Submit</button>
+            </div>
+
+            <button class="add-card-toggle" id="addCardToggle" onclick="toggleAddCardForm()">Add Card</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
