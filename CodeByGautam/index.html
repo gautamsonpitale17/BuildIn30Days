@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeByGautam</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <a href="#" class="logo">CodeBy<span class="logo-text">Gautam</span></a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="mobile-menu-button">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="mobile-menu">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </header>
+    <main>
+        <section id="hero" class="hero">
+            <div class="container">
+                <div class="hero-badge">
+                    <i data-lucide="sparkles" class="w-4 h-4"></i>
+                    <span>Ready to build great software.</span>
+                </div>
+                <h1 class="hero-title">Hi, I'm <span>Gautam</span>.</h1>
+                <p class="hero-subtitle">A passionate MERN Developer specializing in creating efficient, scalable, and delightful web applications.</p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">
+                        View Projects <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        Contact Me <i data-lucide="send" class="w-5 h-5 ml-2"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="blob-bg-1"></div>
+            <div class="blob-bg-2"></div>
+        </section>
+        <div class="wave-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M985.66,92.83C906.67,72,823.79,31,743.84,14.19c-82.26-17.34-168.35-16.63-250.4,14.08-92.34,34.34-106.65,71.2-234.36,108.79C128.85,123.23,75.45,103.65,0,84.11V0H1200V84.11C1113.52,111.43,1053.53,103.55,985.66,92.83Z"></path>
+            </svg>
+        </div>
+        <section id="about" class="section-padding">
+            <div class="container">
+                <h2 class="section-header">About Me</h2>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>My journey in tech began with a simple question: “How does this work?” That curiosity grew into a passion for building high-performance applications. I thrive on breaking complex problems into parts, solving them, and integrating solutions seamlessly.</p>
+                        <p>I stay curious, continuously learning, exploring tech communities, social media, and new tools. My goal is to create AI-powered and innovative solutions that positively impact lives and leave a lasting mark in tech.</p>
+                        <a href="#" style="color: var(--accent-color); font-weight: 600; display: inline-flex; align-items: center; margin-top: 1rem;">
+                            Download Resume <i data-lucide="download" style="width: 1rem; height: 1rem; margin-left: 0.5rem;"></i>
+                        </a>
+                    </div>
+                    <div class="profile-picture-wrapper">
+                        <div class="profile-picture">
+                            <div class="profile-initials">G.D.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="skills" class="section-padding">
+            <div class="container">
+                <h2 class="section-header">Skills & Technologies</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <i data-lucide="layout-grid"></i>
+                        <h3>Front-End</h3>
+                        <p>React, Next.js</p>
+                    </div>
+                    <div class="skill-card">
+                        <i data-lucide="server"></i>
+                        <h3>Back-End</h3>
+                        <p>Node.js, Express</p>
+                    </div>
+                    <div class="skill-card">
+                        <i data-lucide="database"></i>
+                        <h3>Database</h3>
+                        <p>PostgreSQL, MongoDB</p>
+                    </div>
+                    <div class="skill-card">
+                        <i data-lucide="cloud"></i>
+                        <h3>DevOps / Cloud</h3>
+                        <p>AWS, Vercel, Netlify, Docker CI/CD</p>
+                    </div>
+                    <div class="skill-card">
+                        <i data-lucide="git-branch"></i>
+                        <h3>Tools</h3>
+                        <p>Git & GitHub, VS Code, Postman</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="projects" class="section-padding">
+            <div class="container">
+                <h2 class="section-header">Featured Projects</h2>
+                <div id="main-projects-view" class="project-view-container">
+                    <div class="projects-grid">
+                        <div id="thirty-days-card" class="project-card large-card clickable-card">
+                            <div class="project-content">
+                                <h3>30 Days of Frontend</h3>
+                                <p>Showcasing 30 frontend projects built daily to strengthen coding skills and consistency.</p>
+                                <div class="project-tags">
+                                    <span>HTML</span>
+                                    <span>CSS</span>
+                                    <span>JavaScript</span>
+                                </div>
+                                <div class="project-links">
+                                    <i data-lucide="arrow-right-circle" class="w-6 h-6"></i> View Projects
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="thirty-days-detail-view" style="display: none;" class="project-details-view project-view-container">
+                    <button id="back-to-featured" class="btn btn-secondary back-button">
+                        <i data-lucide="arrow-left" class="w-5 h-5 mr-2"></i> Back to Featured Projects
+                    </button>
+                    <div id="project-list-grid" class="project-detail-grid"></div>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="section-padding">
+            <div class="container">
+                <h2 class="section-header" style="text-align: center;">Get In Touch</h2>
+                <div class="contact-card">
+                    <p>Have a project idea, a job offer, or just want to talk tech? My inbox is always open.</p>
+                    <form action="https://formspree.io/f/%VITE_FORMSPREE_ID%" method="POST" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Your Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                            <input type="hidden" name="_replyto">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="4" required placeholder="Tell me about your project or inquiry..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary submit-button">
+                            Send Message <i data-lucide="send" class="w-5 h-5 ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/gautam-sonpitale-0323ba2a5/" target="_blank" aria-label="LinkedIn">
+                    <i data-lucide="linkedin" class="w-6 h-6"></i>
+                </a>
+                <a href="https://github.com/gautamsonpitale17" target="_blank" aria-label="GitHub">
+                    <i data-lucide="github" class="w-6 h-6"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
