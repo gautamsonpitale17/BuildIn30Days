@@ -9,15 +9,14 @@ Features:
 - Clear (AC) and Delete (DEL) buttons
 - Decimal numbers
 - Keyboard support for numbers and operators
-- Responsive and visually appealing design
 
 Tech Stack:
 HTML | CSS | JavaScript
 
 How to Use:
 1. Clone the repository: (https://github.com/gautamsonpitale17/BuildIn30Days)
-2. Open `index.html` in your browser  
-3. Start calculating! 🧮
+2. Open index.html in your browser  
+3. Start calculating! 
 
 ![QuickCalc Screenshot 1](screenshotDarkTheme.png)
 ![QuickCalc Screenshot 2](screenshotLightTheme.png)
