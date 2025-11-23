@@ -1,11 +1,9 @@
 # AgePulse  (Project 14/30)
 
-AgePulse is a simple and elegant age calculator that helps users find their exact age in years, months, and days with precision.  
-It features a modern UI, smooth animation effects, and a light/dark theme toggle for better user experience.
+AgePulse is a simple age calculator that helps users find their exact age in years, months, and days with precision.  
 
 Features:
 - Accurate age calculation (years, months, days)
-- Light/Dark theme toggle 
 - Error handling for invalid dates
 
 Tech Stack: 
