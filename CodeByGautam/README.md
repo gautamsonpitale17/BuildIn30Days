@@ -18,6 +18,5 @@ How to Use:
 - Navigate the main portfolio page.
 - Click on the "30 Days of Code" card to view the list of all 30 projects.
 - Use the Demo button to see the live project and the Code button to view the source code.
-- Click the Back button to return to the featured projects view.
 
 ![CodeByGautam screenshot](screenshot.png)
