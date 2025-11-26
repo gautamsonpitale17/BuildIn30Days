@@ -1,6 +1,6 @@
 # CipherVault (Project 27/30)
 
-CipherVault is a lightweight, browser-based secure note manager. It allows you to save encrypted notes or passwords locally, unlock them with a password, and auto-locks after inactivity.
+CipherVault is a browser-based secure note manager. It allows you to save encrypted notes or passwords locally, unlock them with a password, and auto-locks after inactivity.
 
 Features:
 - Password protection for unlocking the vault.
