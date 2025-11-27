@@ -1,6 +1,6 @@
 # CodeFormater  (Project 26/30)
 
-CodeFormater is a lightweight, web-based tool that lets you format messy code instantly. 
+CodeFormater is a web-based tool that lets you format messy code instantly. 
 It supports JavaScript, HTML, CSS, and JSON, making your code readable and well-structured with just a click or a keyboard shortcut.
 
 Features:
