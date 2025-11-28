@@ -1,12 +1,11 @@
 CryptoDash  (Project 17/30)
 
-CryptoDash is a fully responsive web app that displays live cryptocurrency market data with sorting, searching, and dark-light theme toggle features.  
+CryptoDash is a simple web app that displays live cryptocurrency market data with sorting, searching features.
 
 Features:
 - Real-time crypto price tracking (via CoinGecko API)
 - Search by name 
 - Sort by market cap, price, or 24-hour change
-- Dark/Light theme toggle with local storage memory
 
 Tech Stack: 
 HTML | CSS | JavaScript | CoinGecko API 
