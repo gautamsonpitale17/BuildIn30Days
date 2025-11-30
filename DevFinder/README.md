@@ -1,6 +1,6 @@
 DevFinder (Project 18/30)
 
-DevFinder is a modern, responsive web application that allows you to search for GitHub users and view their profile information instantly.  
+DevFinder is a simple web application that allows you to search for GitHub users and view their profile information instantly.  
 
 Features:
 - Search GitHub users by username
