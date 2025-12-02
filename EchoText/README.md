@@ -1,13 +1,10 @@
 # EchoText  (Project 15/30)
 
-EchoText is a modern and minimal Text-to-Speech web app that converts your typed text into spoken audio instantly.
-It includes a voice selector, smooth UI, and a light/dark theme toggle for a premium experience.
+EchoText is a simple and minimal Text-to-Speech web app that converts your typed text into spoken audio instantly.
 
 Features:
 - Converts text to speech instantly
 - Voice selection (based on system/browser voices)
-- Light/Dark mode toggle with saved preference
-
 
 Tech Stack: 
 HTML | CSS | JavaScript | Web Speech API
