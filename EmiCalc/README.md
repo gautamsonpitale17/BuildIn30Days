@@ -1,15 +1,12 @@
 # EmiCalc  (Project 11/30)
 
-EmiCalc is a modern and intuitive EMI (Equated Monthly Installment) calculator that helps users calculate monthly loan payments, total payable amount, and total interest.  
-With a clean UI, real-time calculation, and dark/light theme toggle, it provides a smooth and professional finance-tool experience.
+EmiCalc is a simple EMI (Equated Monthly Installment) calculator that helps users calculate monthly loan payments, total payable amount, and total interest.  
 
 Features:
 - Calculate Monthly EMI instantly  
 - Shows Total Payment and Total Interest  
 - Adjustable loan amount, interest rate & tenure (years/months)  
-- Real-time updates with range sliders  
 - Expandable Calculation Summary section  
-- Light/Dark theme toggle  
 
 Tech Stack: 
 HTML | CSS | JavaScript 
