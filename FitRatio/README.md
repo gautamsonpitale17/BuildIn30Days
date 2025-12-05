@@ -1,7 +1,7 @@
 # FitRatio (Project 10/30)
 
-FitRatio is a comprehensive, modern, and user-friendly health calculator that determines the Body Mass Index (BMI) and Basal Metabolic Rate (BMR) based on user inputs. 
-It allows users to easily toggle between Metric and Imperial units, view their BMI status with clear guidance, and track their BMI visually with a dynamic chart. The app also supports dark and light themes for comfortable viewing.
+FitRatio is a simple, and user-friendly health calculator that determines the Body Mass Index (BMI) and Basal Metabolic Rate (BMR) based on user inputs. 
+It allows users to easily toggle between Metric and Imperial units, view their BMI status with clear guidance, and track their BMI visually with a dynamic chart. 
 
 Features:
 - BMI Calculation with health category indicator  
@@ -9,8 +9,6 @@ Features:
 - Ideal weight suggestion (gain/lose weight guidance)  
 - Live interactive BMI Chart (Doughnut UI)  
 - Metric ↔️ Imperial Unit Toggle  
-- Dark / Light theme toggle  
-- Clean and responsive UI 
 
 Tech Stack: 
 HTML | CSS | JavaScript | Chart.js
