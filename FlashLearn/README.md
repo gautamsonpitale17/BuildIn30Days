@@ -9,7 +9,6 @@ Features:
 - Navigate between cards using Previous and Next buttons.
 - Add custom flashcards with your own questions and answers.
 - Flashcards are saved in the browser using localStorage, so they persist across sessions.
-- Responsive design for mobile and desktop.
 
 Tech Stack: 
 HTML | CSS | JavaScript 
