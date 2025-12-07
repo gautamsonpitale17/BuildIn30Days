@@ -1,6 +1,6 @@
 # InvisiClean  (Project 25/30)
 
-InvisiClean is a lightweight web app that helps you remove hidden or invisible Unicode characters from text or code. It’s perfect for cleaning copy-pasted code, text from PDFs, or documents that may contain invisible characters that can cause issues.
+InvisiClean is a simple web app that helps you remove hidden or invisible Unicode characters from text or code. It’s perfect for cleaning copy-pasted code, text from PDFs, or documents that may contain invisible characters that can cause issues.
 
 Features:
 - Detects and removes hidden Unicode characters like:
@@ -14,7 +14,6 @@ Features:
   - Number of characters removed
 - Copy cleaned text with a single click
 - Reset functionality for quick reuse
-- Dark and light theme toggle for comfort
 
 Tech Stack: 
 HTML | CSS | JavaScript 
