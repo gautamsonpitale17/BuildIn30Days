@@ -7,7 +7,6 @@ Features:
 - Real-time Currency Conversion.
 - 30-Day Exchange Rate Trend Chart powered by Chart.js
 - Instant Swap between From and To currencies
-- Input Validation for smooth and error-free conversions
 
 Tech Stack: 
 HTML | CSS | JavaScript | ExchangeRate.host | Chart.js
